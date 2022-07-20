@@ -1,4 +1,5 @@
-import Expenses from "./components/Expenses"
+import React from "react";
+import Expenses from "./components/Expenses/Expenses"
 
 const App = () => {
   const expenses = [
@@ -26,6 +27,14 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  // This is non-JSX formatting to show what is happening behind the scenes
+  // return React.createElement(
+  //   'div', 
+  //   {}, 
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, {items: expenses})
+  // );
 
   return (
     <div>
