@@ -29,6 +29,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  }
+
   // This is non-JSX formatting to show what is happening behind the scenes
   // return React.createElement(
   //   'div', 
@@ -39,7 +44,7 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses} />
     </div>
   );
