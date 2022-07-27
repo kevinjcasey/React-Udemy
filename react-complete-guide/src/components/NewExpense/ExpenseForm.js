@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
@@ -56,7 +56,11 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     }
 
-    console.log(expenseData)
+    // Executed via NewExpense.js - passed from child to parent using props
+    // This is how you pass functions between components and communicate up
+    // Frequently used pattern and something you will use A LOT in React 
+    props.onSaveExpenseData(expenseData)
+
     // This is known as TWO-WAY BINDING, which clears the form after submit
     setEnteredTitle('')
     setEnteredAmount('')
